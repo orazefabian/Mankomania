@@ -12,8 +12,17 @@ buildscript {
 }
 
 plugins {
-    id "org.sonarqube" version "3.2.0"
+  id "org.sonarqube" version "3.3"
 }
+
+sonarqube {
+  properties {
+    property "sonar.projectKey", "orazefabian_Mankomania"
+    property "sonar.organization", "se2-projekt-key"
+    property "sonar.host.url", "https://sonarcloud.io"
+  }
+}
+
 
 allprojects {
     version = '1.0'
@@ -34,12 +43,6 @@ allprojects {
         google()
         maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
         maven { url "https://oss.sonatype.org/content/repositories/releases/" }
-    }
-}
-
-sonarqube {
-    properties {
-        property "sonar.projectKey", "SE2-Mankomania-SS20_Mankomania"
     }
 }
 
